@@ -8,6 +8,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import practica4.cmepps.Cuenta;
+
 class TestCuenta {
 
 	private Cuenta cuenta;
