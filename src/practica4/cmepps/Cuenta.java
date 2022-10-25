@@ -55,12 +55,25 @@ public class Cuenta {
 		
 		if(importe > 0) {
 		
-			this.saldo -= importe;
+			if(!sobrepasaLimiteDeDescubierto(importe)) {
+				
+				this.saldo -= importe;
+				
+			} else {
+				
+				throw new Exception("El limite de descubierto se sobrepasaria, no puede realizarse la operacion");
+				
+			}
+			
 			
 		} else {
 			throw new Exception("Importe no válido.");
 		}
 		
+	}
+	
+	private boolean sobrepasaLimiteDeDescubierto(double importeReintegro) {
+		return ((this.saldo - importeReintegro) < -500);
 	}
 
 }
