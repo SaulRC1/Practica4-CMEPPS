@@ -39,9 +39,16 @@ class TestCuenta {
 
 		double saldoResultante = 1100;
 
-		cuenta.ingresar(100);
+		try {
+			cuenta.ingresar(100);
+			assertEquals(saldoResultante, cuenta.getSaldo());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			fail();
+		}
 
-		assertEquals(saldoResultante, cuenta.getSaldo());
+		
 
 	}
 
@@ -50,9 +57,16 @@ class TestCuenta {
 
 		double saldoResultante = 900;
 
-		cuenta.retirar(100);
+		try {
+			cuenta.retirar(100);
+			assertEquals(saldoResultante, cuenta.getSaldo());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			fail();
+		}
 
-		assertEquals(saldoResultante, cuenta.getSaldo());
+		
 
 	}
 

@@ -39,12 +39,28 @@ public class Cuenta {
 		this.saldo = saldo;
 	}
 	
-	public void ingresar(double importe) {
-		this.saldo = 1100;
+	public void ingresar(double importe) throws Exception {
+		
+		if(importe > 0) {
+			
+			this.saldo += importe;
+			
+		} else {
+			throw new Exception("Importe no válido.");
+		}
+		
 	}
 	
-	public void retirar(double importe) {
-		this.saldo = 900;
+	public void retirar(double importe) throws Exception {
+		
+		if(importe > 0) {
+		
+			this.saldo -= importe;
+			
+		} else {
+			throw new Exception("Importe no válido.");
+		}
+		
 	}
 
 }
